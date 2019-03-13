@@ -37,23 +37,23 @@ def listsources():
         print(i)
 
 @main.command()
-def headlines():
+def topheadlines():
     """please enter your choice from the listsources"""
     newsSource = click.prompt("please enter your choice from listsources")
 
     main_url = "https://newsapi.org/v2/top-headlines?apikey=f8c6919b09f245d59c4f5e2f6a134511&sources="+newsSource
 
     # fetching data in json format
-    open_headline = requests.get(main_url).json()
+    open_topheadlines = requests.get(main_url).json()
 
-    # getting all headlines in a string article
-    headline = open_headline["articles"]
+    # getting all topheadlines in a string article
+    topheadlines = open_topheadlines["articles"]
 
     # empty list which will 
     # contain all trending newssources
     output = []
 
-    for h in headline:
+    for h in topheadlines:
         click.echo('\n')
         click.secho(click.style('TITLE: ' + h['title'], fg='red'))
         click.secho(click.wrap_text(h['description']))
