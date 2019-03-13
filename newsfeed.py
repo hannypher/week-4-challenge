@@ -16,7 +16,7 @@ def main():
 
 @main.command()
 
-def listsources():
+def listsources(listsources):
     """ lists four sources from the API """
     main_url = "https://newsapi.org/v2/sources?apikey=f8c6919b09f245d59c4f5e2f6a134511"
 
@@ -37,7 +37,7 @@ def listsources():
         print(i)
 
 @main.command()
-def topheadlines():
+def topheadlines(topheadlines):
     """please enter your choice from the listsources"""
     newsSource = click.prompt("please enter your choice from listsources")
 
