@@ -20,14 +20,15 @@ def listsources():
     """ lists four sources from the API """
     main_url = "https://newsapi.org/v2/sources?apikey=f8c6919b09f245d59c4f5e2f6a134511"
 
-    #fetching data in json format
+    # fetching data in json format
     open_source = requests.get(main_url).json()
 
-    #getting all articles in a string source
+    # getting all articles in a string source
     source = open_source["sources"]
 
-    #empty list which will contain all trending newssources
-    results =[]
+    # empty list which will 
+    # contain all trending newssources
+    results = []
 
     for s in source:
         results.append(s["id"])
@@ -42,13 +43,14 @@ def headlines():
 
     main_url = "https://newsapi.org/v2/top-headlines?apikey=f8c6919b09f245d59c4f5e2f6a134511&sources="+newsSource
 
-    #fetching data in json format
+    # fetching data in json format
     open_headline = requests.get(main_url).json()
 
-    #getting all headlines in a string article
+    # getting all headlines in a string article
     headline = open_headline["articles"]
 
-    #empty list which will contain all trending newssources
+    # empty list which will 
+    # contain all trending newssources
     output = []
 
     for h in headline:
